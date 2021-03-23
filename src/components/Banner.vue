@@ -18,11 +18,17 @@ export default {
         background: #fff
         height: 120px
         margin: 10px 0
+        position: relative
         .text
             margin: auto
             display: flex
             flex-direction: column
             width: fit-content
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%)
+            text-align: center
             span
                 color: #999
 </style>
