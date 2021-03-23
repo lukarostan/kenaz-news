@@ -25,6 +25,9 @@ export default {
     border-left: 12px solid #299EC3
 .teal
     border-left: 12px solid #009688
+.red
+    border-left: 12px solid #EE6151
+
 .category-container
     background: white
     padding: 15px 20px
