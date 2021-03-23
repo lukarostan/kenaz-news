@@ -8,7 +8,6 @@
 </template>
 <script>
 export default {
-    
 }
 </script>
 <style lang="sass" scoped>
@@ -17,7 +16,7 @@ export default {
         border: 1px solid #d7d7d7
         background: #fff
         height: 120px
-        margin: 10px 0
+        margin: 20px 0
         position: relative
         .text
             margin: auto
