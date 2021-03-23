@@ -55,7 +55,6 @@ export default {
         width: 100%
         display: flex
         flex-direction: column
-        
         .navigation
             display: grid
             grid-template-columns: 50% 50%
@@ -92,7 +91,7 @@ export default {
 
 
 .navigation-background
-    background: $purple-dark
+    background: $purple-light
     .navigation-container
         margin: auto
         .navigation-button
@@ -102,7 +101,7 @@ export default {
             border: 2px solid white
             border-radius: 4px
             margin: 5px auto
-            background: $purple-dark
+            background: $purple-light
             div
                 width: 25px
                 background: white
