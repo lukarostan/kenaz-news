@@ -3,16 +3,23 @@
     
     <Banner />
     <MainSlider />
-    <div class="home-grid">
-      <CategoryContainer 
-      categoryContainerTitle="News"
-      :categoryContainerColor="'blue'">
-      </CategoryContainer>
-      <FeaturedNewsContainer />
-      <CategoryContainer 
-      categoryContainerTitle="Sport"
-      :categoryContainerColor="'teal'">
-      </CategoryContainer>
+    <div class="home">
+      <div class="main">
+          <CategoryContainer 
+          categoryContainerTitle="News"
+          :categoryContainerColor="'blue'">
+          </CategoryContainer>
+          <CategoryContainer 
+          categoryContainerTitle="Sport"
+          :categoryContainerColor="'teal'">
+          </CategoryContainer>
+          <Banner />
+          <CategoryContainer 
+          categoryContainerTitle="Business"
+          :categoryContainerColor="'red'">
+          </CategoryContainer>
+        </div>
+        <SideContent />
     </div>
   </div>
 </template>
@@ -22,7 +29,7 @@
 import Banner from '../components/Banner.vue'
 import MainSlider from '../components/MainSlider.vue'
 import CategoryContainer from '../components/CategoryContainer.vue'
-import FeaturedNewsContainer from '../components/FeaturedNewsContainer.vue'
+import SideContent from '../components/SideContent.vue'
 
 export default {
   name: 'Home',
@@ -30,7 +37,7 @@ export default {
     Banner,
     MainSlider,
     CategoryContainer,
-    FeaturedNewsContainer
+    SideContent
   },
   watch:{
     news(){
@@ -48,12 +55,17 @@ export default {
   .content
     width: 70%
 
-  
+
 .content
   margin: 10px auto
-  .home-grid
+  .home
     width: 100%
-    display: grid
-    grid-template-columns: 75% 25%
     margin: 10px 0
+    display: flex
+    flex-direction: row
+    .main
+      width: 75%
+    
+        
+
 </style>
