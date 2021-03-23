@@ -2,8 +2,17 @@
   <div class="content">
     
     <Banner />
-    <div class="news">
-      <p :v-for="article in news.data.articles">article</p>
+    <MainSlider />
+    <div class="home-grid">
+      <CategoryContainer 
+      categoryContainerTitle="News"
+      :categoryContainerColor="'blue'">
+      </CategoryContainer>
+      <FeaturedNewsContainer />
+      <CategoryContainer 
+      categoryContainerTitle="Sport"
+      :categoryContainerColor="'teal'">
+      </CategoryContainer>
     </div>
   </div>
 </template>
@@ -11,11 +20,17 @@
 <script>
 // @ is an alias to /src
 import Banner from '../components/Banner.vue'
+import MainSlider from '../components/MainSlider.vue'
+import CategoryContainer from '../components/CategoryContainer.vue'
+import FeaturedNewsContainer from '../components/FeaturedNewsContainer.vue'
 
 export default {
   name: 'Home',
   components:{
-    Banner
+    Banner,
+    MainSlider,
+    CategoryContainer,
+    FeaturedNewsContainer
   },
   watch:{
     news(){
@@ -26,8 +41,19 @@ export default {
 }
 </script>
 <style lang="sass" scoped>
+@media only screen and (max-width: 600px)
+  .content
+    width: 100%
+@media only screen and (min-width: 600px)
+  .content
+    width: 70%
+
+  
 .content
-  width: 70%
   margin: 10px auto
-  background: white
+  .home-grid
+    width: 100%
+    display: grid
+    grid-template-columns: 75% 25%
+    margin: 10px 0
 </style>
