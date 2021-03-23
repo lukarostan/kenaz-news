@@ -17,7 +17,7 @@ export default {
         border: none
         padding: 0 10px
         margin: 0 5px
-        background: $header-secondary
+        background: $black-secondary
         color: white    
         font-size: 14px
         transition: 0.1s
@@ -32,6 +32,6 @@ export default {
         border-top: 1px solid white
     .active:hover
         cursor: default
-        background: $header-secondary
+        background: $black-secondary
         color: white
 </style>

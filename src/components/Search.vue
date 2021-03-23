@@ -29,7 +29,7 @@ export default {
 .search:hover
     cursor: pointer
 .search
-    background: $header-secondary
+    background: $black-secondary
     width: fit-content
     display: flex
     flex-direction: row

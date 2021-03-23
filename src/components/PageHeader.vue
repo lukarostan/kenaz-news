@@ -42,7 +42,7 @@ export default {
     flex-direction: column    
     .header-background
         width: 100%
-        background: $header-primary
+        background: $black-primary
         height: 5vh
         display: flex
         .header-container
@@ -53,7 +53,7 @@ export default {
                 width: 100%
                 display: flex
                 .logo
-                    background: $header-secondary
+                    background: $black-secondary
                     width: 10%
                     display: flex
                     height: 5vh
