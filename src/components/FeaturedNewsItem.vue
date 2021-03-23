@@ -16,11 +16,15 @@ export default {
 }
 </script>
 <style lang="sass" scoped>
-.featured-item
+    .featured-item:hover
+        background: $purple-dark
+        cursor: pointer
+    .featured-item
         padding: 25px
         display: flex
         flex-direction: row
         color: white
+        transition: all 0.15s
         border-bottom: 1px solid $purple-dark
         .featured-item-content
             display: flex

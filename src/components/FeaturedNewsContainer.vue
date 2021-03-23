@@ -7,6 +7,9 @@
         </div>
         <FeaturedNewsItem />
         <FeaturedNewsItem />
+        <FeaturedNewsItem />
+        <FeaturedNewsItem />
+        <FeaturedNewsItem />
         
     </div>
 </template>
@@ -21,7 +24,7 @@ export default {
 <style lang="sass" scoped>
 .featured
     background: $purple-light
-    margin: 10px 0 10px 20px
+    min-height: fit-content
     .featured-navigation
         background: $purple-dark
         width: 100%
