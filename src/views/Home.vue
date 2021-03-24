@@ -53,7 +53,7 @@ export default {
     width: 100%
 @media only screen and (min-width: 600px)
   .content
-    width: 70%
+    width: 60%
 
 
 .content
