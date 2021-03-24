@@ -13,8 +13,12 @@
                 <div class="newsletter bitter">
                     <h3>Newsletter</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus leo ante.</p>
-                    <input class="varela" type="text" placeholder="Your mail">
-                    <button class="varela">Subscribe</button>
+                    <div class="input-container">
+                        <input class="varela" type="text" placeholder="Your mail">
+                        <ButtonPurple
+                        :buttonLabel="'Subscribe'"
+                        :height="'tall'"></ButtonPurple>
+                    </div>
                 </div>
                 <div class="tags">
                     <h3 class="bitter">Tags Widget</h3>
@@ -66,9 +70,11 @@
 </template>
 <script>
 import FooterNewsItem from './FooterNewsItem'
+import ButtonPurple from './ButtonPurple'
 export default {
     components:{
-        FooterNewsItem
+        FooterNewsItem,
+        ButtonPurple
     }
 }
 </script>
@@ -97,6 +103,7 @@ export default {
             .logo-and-social
                 display: flex
                 flex-direction: column
+                margin-top: -20px
                 .logo
                     display: flex
                     flex-direction: row
@@ -108,17 +115,16 @@ export default {
                 .social
                     width: 400px
             .newsletter
-                input
-                    padding: 15px
-                    border: none
-                    background: $black-secondary
-                    color: white
-                    width: 70%
-                button
-                    padding: 15px
-                    background: $purple-dark
-                    border: none
-                    color: #fff
+                .input-container
+                    display: flex
+                    input
+                        padding: 15px
+                        border: none
+                        background: $black-secondary
+                        color: white
+                        width: 70%
+                    
+                
             .tags
                 .tags-container
                     margin: 20px 0
