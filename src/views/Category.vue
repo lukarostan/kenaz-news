@@ -2,15 +2,24 @@
   <div class="content">
     <Banner />
     <MainSlider />
+    <div class="category">
+      <CategoryNews />
+      <SideContent />
+    </div>
+    <Banner />
   </div>
 </template>
 <script>
 import Banner from '../components/Banner'
 import MainSlider from '../components/MainSlider'
+import CategoryNews from '../components/CategoryNews'
+import SideContent from '../components/SideContent'
 export default {
   components:{
     Banner,
-    MainSlider
+    MainSlider,
+    CategoryNews,
+    SideContent
   }
 }
 </script>
@@ -20,9 +29,13 @@ export default {
     width: 100%
 @media only screen and (min-width: 600px)
   .content
-    width: 70%
+    width: 60%
 
   
 .content
   margin: 10px auto
+  .category
+    display: flex
+    flex-direction: row
+
 </style>
