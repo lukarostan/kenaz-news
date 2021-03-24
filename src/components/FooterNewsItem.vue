@@ -31,6 +31,9 @@ export default {
         width: 90%
     h3
         max-width: 90%
+    h3:hover
+        cursor: pointer
+        text-decoration: underline
     img
         border: 2px solid #fff
 
