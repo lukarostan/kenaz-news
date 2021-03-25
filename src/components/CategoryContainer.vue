@@ -21,6 +21,13 @@ export default {
 }
 </script>
 <style lang="sass" scoped>
+@media only screen and (max-width: 600px)
+    .category-news-container
+        flex-direction: column
+@media only screen and (min-width: 600px)
+    .category-news-container
+        flex-direction: row
+
 .blue
     border-left: 12px solid #299EC3
 .teal
@@ -38,5 +45,5 @@ export default {
         justify-content: space-between
     .category-news-container
         display: flex
-        flex-direction: row
+        
 </style>

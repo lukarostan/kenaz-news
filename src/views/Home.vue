@@ -51,9 +51,18 @@ export default {
 @media only screen and (max-width: 600px)
   .content
     width: 100%
+    .home
+      flex-direction: column
+      .side
+        order: -1
+      
 @media only screen and (min-width: 600px)
   .content
     width: 60%
+    .home
+      flex-direction: row
+      .main
+        width: 75%
 
 
 .content
@@ -62,9 +71,7 @@ export default {
     width: 100%
     margin: 10px 0
     display: flex
-    flex-direction: row
-    .main
-      width: 75%
+    
     
         
 

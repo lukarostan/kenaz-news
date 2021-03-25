@@ -18,8 +18,13 @@ export default {
 };
 </script>
 <style lang="sass" scoped>
+@media only screen and (min-width: 600px)
+  .side
+    margin: 10px 0 10px 20px
+    
+
+
 .side
-      margin: 10px 0 10px 20px
       .banner-container
         display: grid
         margin-top: 20px

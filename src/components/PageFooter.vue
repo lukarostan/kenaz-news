@@ -79,6 +79,21 @@ export default {
 }
 </script>
 <style lang="sass" scoped>
+@media only screen and (max-width: 600px)
+    .footer
+        footer
+            grid-template-columns: 1fr
+            width: 100%
+        .footer-bottom-content
+            flex-direction: column
+            text-align: center 
+        .footer-bottom-content > *
+            margin: 10px 0
+@media only screen and (min-width: 600px)
+    .footer
+        footer
+            grid-template-columns: 1fr 1fr 1fr
+            width: 70%
 .footer
     width: 100%
     .footer-background
@@ -88,13 +103,11 @@ export default {
             padding: 20px
             
         footer
-            width: 70%
             margin: 40px auto
             display: grid
-            grid-template-columns: 1fr 1fr 1fr
-            
             h3
                 color: #CCC
+                font-size: 24px
             p
                 margin: 20px 0
                 color: #666
@@ -113,7 +126,7 @@ export default {
                         margin: 0 10px 
                         font-weight: 400
                 .social
-                    width: 400px
+                    width: 90%
             .newsletter
                 .input-container
                     display: flex
@@ -153,7 +166,6 @@ export default {
             justify-content: space-between
             color: #999
             padding: 20px 0 100px 0
-            
             a
                 color: #999
                 margin: 5px
