@@ -6,16 +6,16 @@
     <div class="home">
       <div class="main">
           <CategoryContainer 
-          categoryContainerTitle="News"
+          :categoryContainerTitle=" $t('news') "
           :categoryContainerColor="'blue'">
           </CategoryContainer>
           <CategoryContainer 
-          categoryContainerTitle="Sport"
+          :categoryContainerTitle=" $t('sports') "
           :categoryContainerColor="'teal'">
           </CategoryContainer>
           <Banner />
           <CategoryContainer 
-          categoryContainerTitle="Business"
+          :categoryContainerTitle=" $t('business') "
           :categoryContainerColor="'red'">
           </CategoryContainer>
         </div>

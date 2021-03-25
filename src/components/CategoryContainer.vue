@@ -2,7 +2,7 @@
     <div class="category-container" :class="categoryContainerColor">
         <div class="category-title">
             <h2 class="bitter">{{ categoryContainerTitle }}</h2>
-            <a href="#" class="varela">See all</a>
+            <a href="#" class="varela">{{ $t('see-all') }}</a>
         </div>
         <div class="category-news-container">
             <NewsItemMedium />
@@ -43,6 +43,7 @@ export default {
         width: 100%
         display: flex
         justify-content: space-between
+        text-transform: capitalize
     .category-news-container
         display: flex
         

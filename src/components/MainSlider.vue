@@ -9,10 +9,10 @@
             <div class="slider-content-container varela">
                 <div class="content-date">
                     <span>August 26, 2013</span>
-                    <span><img src="../assets/comment-ico.png" alt="">22 Comments</span>
+                    <span><img src="../assets/comment-ico.png" alt="">22 {{ $t('comments-label') }}</span>
                 </div>
                 <h2 class="slider-title">'Margot' breathlessly reimagines Anne Frank's sister</h2>
-                <button class="slider-button varela">Read article</button>
+                <button class="slider-button varela">{{ $t('read-article') }}</button>
             </div>
         </div>
     </div>  

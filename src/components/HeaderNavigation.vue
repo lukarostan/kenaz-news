@@ -3,28 +3,28 @@
         <div class="navigation-container">
             <ul class="navigation">
                 <li class="navigation-item">
-                    <a class="bitter" href="#">news</a>
+                    <a class="bitter" href="#">{{ $t('news') }}</a>
                 </li>
                 <li class="navigation-item">
-                    <a class="bitter" href="#">business</a>
+                    <a class="bitter" href="#">{{ $t('business') }}</a>
                 </li>
                 <li class="navigation-item">
-                    <a class="bitter" href="#">entertainment</a>
+                    <a class="bitter" href="#">{{ $t('entertainment') }}</a>
                 </li>
                 <li class="navigation-item">
-                    <a class="bitter" href="#">general</a>
+                    <a class="bitter" href="#">{{ $t('general') }}</a>
                 </li>
                 <li class="navigation-item">
-                    <a class="bitter" href="#">health</a>
+                    <a class="bitter" href="#">{{ $t('health') }}</a>
                 </li>
                 <li class="navigation-item">
-                    <a class="bitter" href="#">science</a>
+                    <a class="bitter" href="#">{{ $t('science') }}</a>
                 </li>
                 <li class="navigation-item">
-                    <a class="bitter" href="#">sports</a>
+                    <a class="bitter" href="#">{{ $t('sports') }}</a>
                 </li>
                 <li class="navigation-item">
-                    <a class="bitter" href="#">technology</a>
+                    <a class="bitter" href="#">{{ $t('technology') }}</a>
                 </li>
             </ul>
         </div>

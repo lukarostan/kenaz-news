@@ -4,12 +4,12 @@
         enter-to-class="appear"
         leave-active-class="disappear">
         <div class="search-input-container" v-if="searchBarOpen">
-            <input type="text" placeholder="Search here...">
+            <input type="text" :placeholder= " $t('search-placeholder') " >
             <select name="category" id="">
-                <option value="">Business</option>
-                <option value="">Entertainment</option>
-                <option value="">General</option>
-                <option value="">Health</option>
+                <option value="">{{ $t('business') }}</option>
+                <option value="">{{ $t('entertainment') }}</option>
+                <option value="">{{ $t('general') }}</option>
+                <option value="">{{ $t('health') }}</option>
             </select>
         </div>
         </transition>
@@ -48,6 +48,7 @@ export default {
             background: white
             border: none
             margin: 0 5px
+            text-transform: capitalize
     .appear //it's not a bug, it's a feature :D
         transform: translateX(-20%) 
         opacity: 1

@@ -1,12 +1,29 @@
 <template>
     <div class="language-selector">
-        <button class="varela active">EN</button>
-        <button class="varela">HR</button>
+        <button 
+        class="varela"
+        :class="{active: enActive}" 
+        @click="$i18n.locale = 'en', enActive = true, hrActive = false"
+        :disabled="enActive"
+        >EN
+        </button>
+        <button 
+        class="varela" 
+        :class="{active: hrActive}" 
+        @click="$i18n.locale = 'hr', hrActive = true, enActive = false"
+        :disabled="hrActive"
+        >HR
+        </button>
     </div>
 </template>
 <script>
 export default {
-    
+    data(){
+        return{
+            enActive : true,
+            hrActive : false
+        }
+    }
 }
 </script>
 <style lang="sass" scoped>

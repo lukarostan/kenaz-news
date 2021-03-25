@@ -1,9 +1,9 @@
 <template>
     <div class="featured">
         <div class="featured-navigation">
-            <a class="active varela" href="#">Popular</a>
-            <a class="varela" href="#">Top Rated</a>
-            <a class="varela" href="#">Comments</a>
+            <a class="active varela" href="#">{{ $t('popular') }}</a>
+            <a class="varela" href="#">{{ $t('top-rated') }}</a>
+            <a class="varela" href="#">{{ $t('comments') }}</a>
         </div>
         <FeaturedNewsItem />
         <FeaturedNewsItem />

@@ -11,17 +11,17 @@
                     <img class="social" src="../assets/social.png" alt="">
                 </div>
                 <div class="newsletter bitter">
-                    <h3>Newsletter</h3>
+                    <h3>{{ $t('newsletter') }}</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus leo ante.</p>
                     <div class="input-container">
-                        <input class="varela" type="text" placeholder="Your mail">
+                        <input class="varela" type="text" :placeholder=" $t('your-mail') ">
                         <ButtonPurple
-                        :buttonLabel="'Subscribe'"
+                        :buttonLabel="$t('subscribe')"
                         :height="'tall'"></ButtonPurple>
                     </div>
                 </div>
                 <div class="tags">
-                    <h3 class="bitter">Tags Widget</h3>
+                    <h3 class="bitter">{{ $t('tags-widget') }}</h3>
                     <div class="tags-container varela">
                         <span class="tag">lorem</span>
                         <span class="tag">ipsum</span>
@@ -36,19 +36,19 @@
                     </div>
                 </div>
                 <div class="featured">
-                    <h3 class="bitter">Featured</h3>
+                    <h3 class="bitter">{{ $t('featured') }}</h3>
                     <FooterNewsItem />
                     <FooterNewsItem />
                     <FooterNewsItem />
                 </div>
                 <div class="random-posts">
-                    <h3 class="bitter">Random Posts</h3>
+                    <h3 class="bitter">{{ $t('random-posts') }}</h3>
                     <FooterNewsItem />
                     <FooterNewsItem />
                     <FooterNewsItem />
                 </div>
                 <div class="recently-viewed">
-                    <h3 class="bitter">Recently Viewed</h3>
+                    <h3 class="bitter">{{ $t('recently-viewed') }}</h3>
                     <FooterNewsItem />
                     <FooterNewsItem />
                     <FooterNewsItem />
@@ -58,10 +58,10 @@
                 <div class="footer-bottom-content">
                     <p >© 2013 - Kenaz Template - Proudly made at Plava tvornica Croatia</p>
                     <div class="footer-bottom-nav">
-                        <a href="#">Typography</a>-
-                        <a href="#">Templates</a>-
-                        <a href="#">Contact Form</a>-
-                        <a href="#">404 Page</a>
+                        <a href="#">{{ $t('typography') }}</a>-
+                        <a href="#">{{ $t('templates') }}</a>-
+                        <a href="#">{{ $t('contact-form') }}</a>-
+                        <a href="#">{{ $t('404') }}</a>
                     </div>
                 </div>
             </div>
