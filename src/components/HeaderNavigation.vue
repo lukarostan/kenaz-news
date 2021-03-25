@@ -51,7 +51,7 @@ export default {
 
 @media only screen and (min-width: 600px)
     .navigation-container
-        width: 70%
+        width: 60%
         .navigation-button
             display: none
         .navigation
