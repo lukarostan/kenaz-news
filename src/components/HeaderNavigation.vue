@@ -1,11 +1,7 @@
 <template>
     <div class="navigation-background">
         <div class="navigation-container">
-            <button class="navigation-button"
-            v-on:click="showNavMobile = !showNavMobile">
-            <div></div><div></div><div></div>
-            </button>
-            <ul class="navigation" v-if="showNavMobile">
+            <ul class="navigation">
                 <li class="navigation-item">
                     <a class="bitter" href="#">news</a>
                 </li>
@@ -36,46 +32,22 @@
 </template>
 <script>
 export default {
-    data(){
-        return{
-            showNavMobile: true
-        }
-    }
 }
 </script>
 <style lang="sass" scoped>
 
-@media only screen and (max-width: 425px)
-    .navigation
-        grid-template-columns: 100%
-        .navigation-item
-            min-width: 200px
-@media only screen and (min-width: 425px) and (max-width: 600px)
+@media only screen and (max-width: 600px)
     .navigation-container
         width: 100%
         display: flex
         flex-direction: column
         .navigation
-            display: grid
-            grid-template-columns: 50% 50%
-            justify-items: center
+            display: flex
+            flex-direction: row
+            overflow: auto
         .navigation-item
             padding: 10px 5px
-            min-width: 100%
-        .navigation-item:nth-of-type(2)
-            background: #EE6151
-        .navigation-item:nth-of-type(3)
-            background: #84C14F
-        .navigation-item:nth-of-type(4)
-            background: #5DCFF3
-        .navigation-item:nth-of-type(5)
-            background: #FCC44D
-        .navigation-item:nth-of-type(6)
-            background: #A99765
-        .navigation-item:nth-of-type(7)
-            background: #009688
-        .navigation-item:nth-of-type(8)
-            background: #d7ccc8
+            width: fit-content
 
 @media only screen and (min-width: 600px)
     .navigation-container
@@ -94,22 +66,7 @@ export default {
     background: $purple-light
     .navigation-container
         margin: auto
-        .navigation-button
-            margin: auto
-            width: fit-content
-            padding: 5px
-            border: 2px solid white
-            border-radius: 4px
-            margin: 5px auto
-            background: $purple-light
-            div
-                width: 25px
-                background: white
-                height: 2px
-                margin: 5px
-                border-radius: 2px
         .navigation
-            
             .navigation-item
                 box-shadow: inset 0 -5px 0 #A99765
                 width: fit-content
