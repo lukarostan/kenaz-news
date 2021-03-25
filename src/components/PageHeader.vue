@@ -6,7 +6,9 @@
                 <div class="logo">
                     <img src="../assets/kenaz-logo-white.png" alt="">
                 </div>
-                <h1 class="header-title bitter">Kenaz</h1>
+                <router-link to ="/">
+                    <h1 class="header-title bitter">Kenaz</h1>
+                </router-link>
             </header>
             <Search />
             <LanguageSelector />
@@ -32,9 +34,10 @@ export default {
 @media only screen and (max-width: 600px)
     .header-container
         width: 100%
+        overflow: auto
 @media only screen and (min-width: 600px)
     .header-container
-        width: 70%
+        width: 60%
 
 
 .header
@@ -54,7 +57,7 @@ export default {
                 display: flex
                 .logo
                     background: $black-secondary
-                    width: 10%
+                    width: 60px
                     display: flex
                     height: 5vh
                     img
