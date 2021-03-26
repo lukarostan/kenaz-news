@@ -1,26 +1,89 @@
 <template>
-    <div class="content">
-
-        <Banner />
+  <div class="content">
+    <Banner />
+    <div class="article-image-container bitter">
+      <img class="article-image" src="../assets/single.png" alt="" />
+      <div class="image-content">
+        <span>August 26, 2013</span>
+        <h2>'Margot' breathlessly reimagines Anne Frank's sister</h2>
+      </div>
     </div>
+    <div class="single">
+      <div class="main">
+        <SingleArticle />
+        <Banner />
+        <div class="author varela">
+          <h3 class="bitter">{{ $t("about-author") }}</h3>
+          <div class="author-content">
+            <img src="../assets/author.png" alt="">
+            <p>Molestias ultricies, ante quam urna ut volutpat, egestas dolor dui, nec hac ultrices nulla non netus. Placerat vehicula donec non suscipit egestas, augue vel suspendisse. Et felis venenatis blandit sed est ultrices, adipiscing urna, at aliquam nullam facilisis aliquet sapien, eget duis consectetuer tristique nunc vitae erat, mi purus nisl lorem. </p>
+          </div>
+        </div>
+        <SingleComments />
+      </div>
+      <SideContent />
+    </div>
+  </div>
 </template>
 <script>
-import Banner from '../components/Banner'
+import Banner from "../components/Banner";
+import SideContent from "../components/SideContent";
+import SingleArticle from "../components/SingleArticle";
+import SingleComments from "../components/SingleComments";
 export default {
-    components:{
-        Banner
-    }
-}
+  components: {
+    Banner,
+    SideContent,
+    SingleArticle,
+    SingleComments
+  },
+};
 </script>
 <style lang="sass">
 @media only screen and (max-width: 600px)
   .content
     width: 100%
+    .single
+      display: flex
+      flex-direction: column
+      .side
+        order: -1
+
 @media only screen and (min-width: 600px)
   .content
-    width: 70%
+    width: 60%
+    .single
+      display: flex
+      flex-direction: row
+      .main
 
-  
+        width: 75%
+
 .content
   margin: 10px auto
+  .article-image-container
+    position: relative
+    .article-image
+      width: 100%
+    .image-content
+      h2
+        font-size: 44px
+      h2, span
+        position: absolute
+        bottom: 0
+        left: 0
+        padding: 20px
+  .single
+    .main
+      .author
+        background: #fff
+        h3
+          font-size: 24px
+          padding: 20px 0 0 5%
+        .author-content
+          display: flex
+          align-items: center
+          padding: 5%
+          p
+            padding-left: 5%
 </style>
