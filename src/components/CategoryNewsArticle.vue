@@ -3,16 +3,16 @@
         <h3>Patriots make cuts... and Tim Tebow survives (so far)</h3>
         <div class="article-info varela">
             <span> <img src="../assets/calendar.png" alt=""> August 26, 2013</span>
-            <span>Author: Matej Sudar</span>
-            <span>12 Comments</span>
+            <span>{{$t('author')}}: Matej Sudar</span>
+            <span>12 {{$t('comments')}}</span>
         </div>
         <div class="article-content">
             <img src="../assets/category-article.png" alt="">
             <div class="paragraph-container">
                 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo. </p>
                 <ButtonPurple 
-                :buttonLabel="'Read Article'"
-                :height="'short'">
+                :buttonLabel="$t('read-article')"
+                :buttonSize="'short'">
                 </ButtonPurple>
 
             </div>

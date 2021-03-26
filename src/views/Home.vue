@@ -7,17 +7,32 @@
       <div class="main">
           <CategoryContainer 
           :categoryContainerTitle=" $t('news') "
-          :categoryContainerColor="'blue'">
+          :categoryContainerColor="'blue'"
+          :categoryContainerDisplay="'row'">
+            <SeeAll />
+            <NewsItemMedium />
+            <NewsItemMedium />
+            <NewsItemMedium />
           </CategoryContainer>
           <CategoryContainer 
           :categoryContainerTitle=" $t('sports') "
-          :categoryContainerColor="'teal'">
+          :categoryContainerColor="'teal'"
+          :categoryContainerDisplay="'row'">
+            <NewsItemMedium />
+            <NewsItemMedium />
+            <NewsItemMedium />
           </CategoryContainer>
           <Banner />
           <CategoryContainer 
           :categoryContainerTitle=" $t('business') "
-          :categoryContainerColor="'red'">
+          :categoryContainerColor="'red'"
+          :categoryContainerDisplay="'grid'">
+            <NewsItemMedium />
+            <NewsItemMedium />
+            <NewsItemMedium />
+            <NewsItemMedium />
           </CategoryContainer>
+          <Banner />
         </div>
         <SideContent />
     </div>
@@ -30,6 +45,8 @@ import Banner from '../components/Banner.vue'
 import MainSlider from '../components/MainSlider.vue'
 import CategoryContainer from '../components/CategoryContainer.vue'
 import SideContent from '../components/SideContent.vue'
+import NewsItemMedium from '../components/NewsItemMedium'
+import SeeAll from '../components/SeeAll'
 
 export default {
   name: 'Home',
@@ -37,7 +54,9 @@ export default {
     Banner,
     MainSlider,
     CategoryContainer,
-    SideContent
+    SideContent,
+    NewsItemMedium,
+    SeeAll
   },
   watch:{
     news(){

@@ -2,22 +2,26 @@
     <div class="category-container" :class="categoryContainerColor">
         <div class="category-title">
             <h2 class="bitter">{{ categoryContainerTitle }}</h2>
-            <a href="#" class="varela">{{ $t('see-all') }}</a>
+            <slot name="control">
+                
+            </slot>
         </div>
-        <div class="category-news-container">
-            <NewsItemMedium />
-            <NewsItemMedium />
-            <NewsItemMedium />
+        <div class="category-news-container" :class="categoryContainerDisplay">
+            <slot name="content">
+            </slot>
         </div>
     </div>
 </template>
 <script>
-import NewsItemMedium from './NewsItemMedium'
+/* import NewsItemMedium from './NewsItemMedium' */
 export default {
     components:{
-        NewsItemMedium
+        
     },
-    props:['categoryContainerTitle','categoryContainerColor']
+    props:[
+        'categoryContainerTitle',
+        'categoryContainerColor',
+        'categoryContainerDisplay']
 }
 </script>
 <style lang="sass" scoped>
@@ -25,15 +29,25 @@ export default {
     .category-news-container
         flex-direction: column
 @media only screen and (min-width: 600px)
-    .category-news-container
+    //categoryContainerDisplay
+    .row
+        display: flex
         flex-direction: row
+    .grid
+        display: grid
+        grid-template-columns: 1fr 1fr
 
+    
+//categoryContainerColor
 .blue
     border-left: 12px solid #299EC3
 .teal
     border-left: 12px solid #009688
 .red
     border-left: 12px solid #EE6151
+
+
+
 
 .category-container
     background: white
@@ -44,7 +58,4 @@ export default {
         display: flex
         justify-content: space-between
         text-transform: capitalize
-    .category-news-container
-        display: flex
-        
 </style>

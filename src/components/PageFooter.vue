@@ -17,7 +17,7 @@
                         <input class="varela" type="text" :placeholder=" $t('your-mail') ">
                         <ButtonPurple
                         :buttonLabel="$t('subscribe')"
-                        :height="'tall'"></ButtonPurple>
+                        :buttonSize="'tall'"></ButtonPurple>
                     </div>
                 </div>
                 <div class="tags">
@@ -93,7 +93,7 @@ export default {
     .footer
         footer
             grid-template-columns: 1fr 1fr 1fr
-            width: 70%
+            width: 65%
 .footer
     width: 100%
     .footer-background

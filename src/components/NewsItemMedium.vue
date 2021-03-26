@@ -1,4 +1,4 @@
-<template>
+<template v-slot:control>
     <div class="medium varela">
         <img src="../assets/medium-example.png" alt="">
         <div class="medium-content-date">
