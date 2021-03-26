@@ -1,11 +1,11 @@
 <template>
     <div class="button-container">
-        <button :class="height">{{buttonLabel}}</button>
+        <button :class="buttonSize">{{buttonLabel}}</button>
     </div>
 </template>
 <script>
 export default {
-    props:['buttonLabel','height']
+    props:['buttonLabel','buttonSize']
 
 }
 </script>
@@ -14,6 +14,8 @@ export default {
     padding: 15px 
 .short
     padding: 5px 15px
+.big
+    padding: 15px 40px
 button
     background: $purple-dark
     border: none
