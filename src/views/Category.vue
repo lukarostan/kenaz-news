@@ -27,15 +27,34 @@ export default {
 @media only screen and (max-width: 600px)
   .content
     width: 100%
+    .category
+      flex-direction: column
+      .side
+        order: -1
+        margin: 10px 0
+@media only screen and (min-width: 601px) and (max-width: 1024px)
+  .content
+    width: 90%
+    .side
+      width: 50%
+@media only screen and (min-width: 1024px) and (max-width: 1366px)
+  .content
+    width: 90%
+@media only screen and (min-width: 1367px) and (max-width: 1600px)
+  .content
+    width: 80%
+@media only screen and (min-width: 1601px)
+  .content
+    width: 65%
+
 @media only screen and (min-width: 600px)
   .content
-    width: 60%
-
+    .category
+      flex-direction: row
   
 .content
-  margin: 10px auto
   .category
     display: flex
-    flex-direction: row
+    
 
 </style>

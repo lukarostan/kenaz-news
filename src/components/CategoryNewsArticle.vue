@@ -28,6 +28,18 @@ export default {
 }
 </script>
 <style lang="sass" scoped>
+@media only screen and (max-width: 1024px)
+    .article-content
+        flex-direction: column
+        .paragraph-container
+            margin: 10px 0
+
+@media only screen and (min-width: 1024px)
+    .article-content
+        flex-direction: row
+        .paragraph-container
+            margin: 0 30px
+
 .category-article
     display: flex
     flex-direction: column
@@ -43,10 +55,6 @@ export default {
             font-size: 12px
     .article-content
         display: flex
-        flex-direction: row
-        .paragraph-container
-            margin: 0 30px
-            
     .button-container
         margin: 10px 0
 

@@ -4,8 +4,10 @@
     <div class="article-image-container bitter">
       <img class="article-image" src="../assets/single.png" alt="" />
       <div class="image-content">
-        <span>August 26, 2013</span>
-        <h2>'Margot' breathlessly reimagines Anne Frank's sister</h2>
+        <div class="heading">
+          <span>August 26, 2013</span>
+          <h2>'Margot' breathlessly reimagines Anne Frank's sister</h2>
+        </div>
       </div>
     </div>
     <div class="single">
@@ -43,36 +45,74 @@ export default {
 @media only screen and (max-width: 600px)
   .content
     width: 100%
+    .image-content
+      height: 50%
+      .heading
+        
     .single
       display: flex
       flex-direction: column
+      .main
+        .author-content
+          flex-direction: column
+          img
+            margin: 10px
       .side
         order: -1
 
-@media only screen and (min-width: 600px)
+@media only screen and (min-width: 601px) and (max-width: 1366px)
+  .content
+    width: 90%
+    .single
+      .main
+        width: 60%
+
+@media only screen and (min-width: 1367px) and (max-width: 1600px)
+  .content
+    width: 80%
+    .single
+      .main
+        width: 65%
+
+@media only screen and (min-width: 1601px)
   .content
     width: 60%
     .single
+      .main
+        width: 70%
+
+@media only screen and (min-width: 600px)
+  .content
+    .image-content
+      height: 25%
+      .heading
+        h2
+          font-size: 44px
+    .single
       display: flex
       flex-direction: row
-      .main
 
-        width: 75%
 
 .content
   margin: 10px auto
   .article-image-container
     position: relative
+    display: flex
+    flex-direction: column
     .article-image
       width: 100%
     .image-content
-      h2
-        font-size: 44px
-      h2, span
-        position: absolute
-        bottom: 0
-        left: 0
-        padding: 20px
+      width: 100%
+      display: flex
+      flex-direction: column
+      justify-content: flex-end
+      position: absolute
+      bottom: 0
+      background: linear-gradient(to top, #eee, #eee, transparent)
+      .heading
+        padding: 0 4%  
+        h2
+          margin: 10px auto
   .single
     .main
       .author

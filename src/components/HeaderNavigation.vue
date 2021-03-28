@@ -39,26 +39,25 @@ export default {
 @media only screen and (max-width: 600px)
     .navigation-container
         width: 100%
-        display: flex
-        flex-direction: column
-        .navigation
-            display: flex
-            flex-direction: row
-            overflow: auto
-        .navigation-item
-            padding: 10px 5px
-            width: fit-content
-
-@media only screen and (min-width: 600px)
+@media only screen and (min-width: 601px) and (max-width: 1024px)
     .navigation-container
-        width: 60%
-        .navigation-button
-            display: none
-        .navigation
-            display: flex
-            flex-direction: row 
-            .navigation-item
-                padding: 15px 5px
+        width: 90%
+
+@media only screen and (max-width: 1200px)
+    .navigation
+        overflow-x: auto
+        overflow-y: hidden
+
+@media only screen and (min-width: 1025px) and (max-width: 1366px)
+    .navigation-container
+        width: 90%
+@media only screen and (min-width: 1367px) and (max-width: 1600px)
+    .navigation-container
+        width: 80%
+@media only screen and (min-width: 1601px)
+    .navigation-container
+        width: 65%
+
 
 
 
@@ -67,10 +66,13 @@ export default {
     .navigation-container
         margin: auto
         .navigation
+            display: flex
+            flex-direction: row 
             .navigation-item
                 box-shadow: inset 0 -5px 0 #A99765
                 width: fit-content
                 height: fit-content
+                padding: 15px 5px
                 a
                     padding: 20px
                     text-transform: uppercase

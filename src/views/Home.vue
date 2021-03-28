@@ -1,6 +1,5 @@
 <template>
   <div class="content">
-    
     <Banner />
     <MainSlider />
     <div class="home">
@@ -36,6 +35,8 @@
         </div>
         <SideContent />
     </div>
+    <Banner />
+    <PictureSlider v-if="false"/>
   </div>
 </template>
 
@@ -47,6 +48,7 @@ import CategoryContainer from '../components/CategoryContainer.vue'
 import SideContent from '../components/SideContent.vue'
 import NewsItemMedium from '../components/NewsItemMedium'
 import SeeAll from '../components/SeeAll'
+import PictureSlider from '../components/PictureSlider'
 
 export default {
   name: 'Home',
@@ -56,7 +58,8 @@ export default {
     CategoryContainer,
     SideContent,
     NewsItemMedium,
-    SeeAll
+    SeeAll,
+    PictureSlider
   },
   watch:{
     news(){
@@ -75,14 +78,26 @@ export default {
       .side
         order: -1
       
-@media only screen and (min-width: 600px)
+@media only screen and (min-width: 601px) and (max-width: 1024px)
   .content
-    width: 60%
-    .home
-      flex-direction: row
-      .main
-        width: 75%
-
+    width: 90%
+    .side
+      width: 80%
+@media only screen and (min-width: 1024px) and (max-width: 1366px)
+  .content
+    width: 90%
+    .side
+      width: 60%
+@media only screen and (min-width: 1367px) and (max-width: 1600px)
+  .content
+    width: 80%
+    .side
+      width: 50%
+@media only screen and (min-width: 1601px)
+  .content
+    width: 65%
+    .side
+      width: 55%
 
 .content
   margin: 10px auto

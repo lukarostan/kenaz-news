@@ -23,6 +23,14 @@ export default {
 }
 </script>
 <style lang="sass" scoped>
+@media only screen and (max-width: 600px)
+    .slider-title
+        
+@media only screen and (min-width: 600px)
+    .slider-title
+        font-size: 34px
+        line-height: 40px
+        
 .main-slider
     position: relative
     overflow: hidden
@@ -42,22 +50,14 @@ export default {
                 margin: 15px
             img:hover
                 cursor: pointer
-        .slider-content-container:after
-            content: 
-            display: block
-            position: absolute
-            width: 100%
-            height: 100%
-            background-color: rgba(0,0,0,0.4)
-            z-index: 0
-            bottom: 0
         .slider-content-container
             position: absolute
-            bottom: 40px
-            left: 10px
+            bottom: 0
+            left: 0
             width: 100%
             z-index: 1
             color: white
+            background: linear-gradient(to top, black, transparent)
             .content-date
                 font-size: 12px
                 span
@@ -65,8 +65,8 @@ export default {
                     img
                         margin: 0 5px
             .slider-title
-                font-size: 34px
-                line-height: 40px
+                
+                
                 margin: 5px 15px
             .slider-button
                 background: rgba(0, 0, 0, 0.0001)

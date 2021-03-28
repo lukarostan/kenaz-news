@@ -89,11 +89,36 @@ export default {
             text-align: center 
         .footer-bottom-content > *
             margin: 10px 0
-@media only screen and (min-width: 600px)
+@media only screen and (min-width: 601px) and (max-width: 1024px)
+    .footer
+        footer
+            grid-template-columns: 1fr 1fr
+            width: 90%
+        .footer-bottom-content
+            width: 90%
+@media only screen and (min-width: 1025px) and (max-width: 1366px)
+    .footer
+        footer
+            grid-template-columns: 1fr 1fr
+            width: 90%
+        .footer-bottom-content
+            width: 90%
+@media only screen and (min-width: 1367px) and (max-width: 1600px)
+    .footer
+        footer
+            grid-template-columns: 1fr 1fr 1fr
+            width: 80%
+        .footer-bottom-content
+            width: 80%
+@media only screen and (min-width: 1601px)
     .footer
         footer
             grid-template-columns: 1fr 1fr 1fr
             width: 65%
+        .footer-bottom-content
+            width: 65%
+
+
 .footer
     width: 100%
     .footer-background
@@ -160,7 +185,6 @@ export default {
     .footer-bottom
         border-top: 1px solid #333
         .footer-bottom-content
-            width: 70%
             margin: auto
             display: flex
             justify-content: space-between

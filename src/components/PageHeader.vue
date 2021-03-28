@@ -35,9 +35,21 @@ export default {
     .header-container
         width: 100%
         overflow: auto
-@media only screen and (min-width: 600px)
+
+@media only screen and (min-width: 601px) and (max-width: 1024px)
     .header-container
-        width: 60%
+        width: 90%
+        overflow: auto
+        
+@media only screen and (min-width: 1025px) and (max-width: 1366px)
+    .header-container
+        width: 90%
+@media only screen and (min-width: 1367px) and (max-width: 1600px)
+    .header-container
+        width: 80%
+@media only screen and (min-width: 1601px)
+    .header-container
+        width: 65%
 
 
 .header

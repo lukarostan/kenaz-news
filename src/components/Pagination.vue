@@ -20,14 +20,20 @@ export default {
 }
 </script>
 <style lang="sass" scoped>
+@media only screen and (max-width: 600px)
+    .pagination
+        padding: 20px
+@media only screen and (min-width: 600px)
+    .pagination
+        padding: 25px 35px 
+        display: flex
+        flex-direction: row
+
 .pagination-container
     width: 100%
     .pagination > *
         font-family: 'Varela Round', sans-serif
     .pagination
-        display: flex
-        flex-direction: row
-        padding: 25px 35px 
         .page-button
             background: #DDD
             margin: 1px
