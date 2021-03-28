@@ -7,7 +7,7 @@
             </slot>
         </div>
         <div class="category-news-container" :class="categoryContainerDisplay">
-            <slot name="content">
+            <slot>
             </slot>
         </div>
     </div>
