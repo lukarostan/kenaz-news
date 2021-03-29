@@ -1,10 +1,12 @@
 <template>
-    <div class="category-container" :class="categoryContainerColor">
+    <div class="category-container" :class="[categoryContainerColor, categoryContainerSize]">
         <div class="category-title">
             <h2 class="bitter">{{ categoryContainerTitle }}</h2>
-            <slot name="control">
-                
-            </slot>
+            <a v-if="!showControls" href="#" class="varela">{{ $t('see-all') }}</a>
+            <div v-if="showControls" class="controls">
+                <div class="arrow" :class="controlsColor" id="right"></div>
+                <div class="arrow" :class="controlsColor" id="left"></div>
+            </div>
         </div>
         <div class="category-news-container" :class="categoryContainerDisplay">
             <slot>
@@ -13,7 +15,6 @@
     </div>
 </template>
 <script>
-/* import NewsItemMedium from './NewsItemMedium' */
 export default {
     components:{
         
@@ -21,7 +22,10 @@ export default {
     props:[
         'categoryContainerTitle',
         'categoryContainerColor',
-        'categoryContainerDisplay']
+        'categoryContainerDisplay',
+        'categoryContainerSize',
+        'showControls',
+        'controlsColor']
 }
 </script>
 <style lang="sass" scoped>
@@ -36,6 +40,9 @@ export default {
     .grid
         display: grid
         grid-template-columns: 1fr 1fr
+    //categoryContainerSize
+    .small
+        width: 48%
 
     
 //categoryContainerColor
@@ -45,8 +52,17 @@ export default {
     border-left: 12px solid #009688
 .red
     border-left: 12px solid #EE6151
-
-
+.yellow
+    border-left: 12px solid #FCC44D
+.brown
+    border-left: 12px solid #A99765
+//controlsColor
+.yellowControls
+    border-left: 6px solid #FCC44D
+    border-bottom: 6px solid #FCC44D
+.brownControls
+    border-left: 6px solid #A99765
+    border-bottom: 6px solid #A99765
 
 
 .category-container
@@ -58,4 +74,19 @@ export default {
         display: flex
         justify-content: space-between
         text-transform: capitalize
+        .controls
+            display: flex
+            padding: 10px 20px
+            .arrow
+                height: 20px
+                margin: 0 5px
+                width: 20px
+                border-radius: 4px
+                transition: all 0.15s ease-out
+            .arrow:hover
+                cursor: pointer
+            #right
+                transform: rotate(45deg)
+            #left
+                transform: rotate(225deg)
 </style>
