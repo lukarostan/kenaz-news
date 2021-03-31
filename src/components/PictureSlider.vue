@@ -3,10 +3,10 @@
         <div class="slider-controls">
             <div class="nav">
                 <img src="../assets/main-slider-left.png" alt=""
-                @mousedown="sliderLeft">
+                @mousedown="pictureSliderLeftHandler">
                 <img src="../assets/search.png" alt="">
                 <img src="../assets/main-slider-right.png" alt=""
-                @mousedown="sliderRight">
+                @mousedown="pictureSliderRightHandler">
             </div>
             <div class="pictures-bar">
                 <img src="../assets/pictures-bar (1).png" alt="">
@@ -19,10 +19,11 @@
             </div>
         </div>
         <div class="slider" id="slider">
-            <img src="../assets/picture-slider.png" alt="" class="slider-image">
-            <img src="../assets/picture-slider.png" alt="" class="slider-image">
-            <img src="../assets/picture-slider.png" alt="" class="slider-image">
-            
+            <img :style="{transform: 'translateX('+ this.pictureSliderPosition * 100 +'%)'}" src="../assets/picture-slider.png" alt="" class="slider-image">
+            <img :style="{transform: 'translateX('+ this.pictureSliderPosition * 100 +'%)'}" src="../assets/picture-slider.png" alt="" class="slider-image">
+            <img :style="{transform: 'translateX('+ this.pictureSliderPosition * 100 +'%)'}" src="../assets/picture-slider.png" alt="" class="slider-image">
+            <img :style="{transform: 'translateX('+ this.pictureSliderPosition * 100 +'%)'}" src="../assets/picture-slider.png" alt="" class="slider-image">
+
         </div>
     </div>
 </template>
@@ -30,23 +31,29 @@
 export default {
     data(){
         return{
-            sliderPosition: 0
+            pictureSliderPosition: 0
         }
     },
     methods:{
-        sliderLeft(){
-            console.log("left")
-            this.sliderPosition = this.sliderPosition + 1 
-            console.log(this.sliderPosition)
-            document.getElementsByClassName("slider-image").style.transform =  "translateX(-100%)"
+        pictureSliderLeftHandler(){
+            
+            console.log(this.pictureSliderPosition)
+            if(this.pictureSliderPosition <=0){
+                return this.pictureSliderPosition++ 
+            }
         },
-        sliderRight(){
-            console.log("right")
+        pictureSliderRightHandler(){
+            if(this.pictureSliderPosition >=0){
+                return this.pictureSliderPosition--
+            }
+            console.log(this.pictureSliderPosition)
         }
     }
 }
 </script>
 <style lang="sass" scoped>
+.slider-container:hover .slider-controls
+    opacity: 1
 .slider-container
     position: relative
     width: 100%
@@ -56,6 +63,9 @@ export default {
         bottom: 0
         height: 50%
         background: linear-gradient(to top, black, transparent)
+        z-index: 2
+        opacity: 0
+        transition: opacity 0.2s ease-in
         .nav
             display: flex
             justify-content: space-between
@@ -74,6 +84,7 @@ export default {
             margin: 0 auto
             position: absolute
             transform: translateX(5%)
+            overflow-x: auto
             img
                 transition: all 0.15s ease-out
             img:hover
@@ -81,9 +92,11 @@ export default {
                 transform: translateY(-2%)
             
     .slider
-        overflow: auto
+        overflow: hidden
         display: flex
         flex-direction: row
-        img
-            width: 100%
+        height: 500px
+        .slider-image
+            width: 1000px
+            transition: all 0.5s
 </style>
