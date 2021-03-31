@@ -14,7 +14,7 @@ export default {
     PageFooter
 
   },
-  created(){
+  mounted(){
     this.$store.dispatch('getNews')
   }
 }
