@@ -1,7 +1,9 @@
 <template>
   <div class="content">
     <Banner />
-    <MainSlider />
+    <MainSlider >
+
+    </MainSlider>
     <div class="home">
       <div class="main">
         <CategoryContainer
@@ -10,9 +12,15 @@
           :categoryContainerDisplay="'row'"
           :showControls="false"
         >
-          <NewsItemMedium />
-          <NewsItemMedium />
-          <NewsItemMedium />
+          <NewsItemMedium 
+          v-for="article in this.$store.state.news.data.articles.slice(1,4)" 
+          :key="article.id"
+          :title="article.title"
+          :image="article.urlToImage"
+          :date="article.publishedAt.slice(0,10)"
+          >
+          </NewsItemMedium>
+          
         </CategoryContainer>
         <CategoryContainer
           :categoryContainerTitle="$t('sports')"
@@ -20,9 +28,14 @@
           :categoryContainerDisplay="'row'"
           :showControls="false"
         >
-          <NewsItemMedium />
-          <NewsItemMedium />
-          <NewsItemMedium />
+          <NewsItemMedium 
+          v-for="article in this.$store.state.news.data.articles.slice(4,7)" 
+          :key="article.url"
+          :title="article.title"
+          :image="article.urlToImage"
+          :date="article.publishedAt.slice(0,10)"
+          >
+          </NewsItemMedium>
         </CategoryContainer>
         <Banner />
         <CategoryContainer
@@ -31,10 +44,14 @@
           :categoryContainerDisplay="'grid'"
           :showControls="false"
         >
-          <NewsItemMedium />
-          <NewsItemMedium />
-          <NewsItemMedium />
-          <NewsItemMedium />
+          <NewsItemMedium 
+          v-for="article in this.$store.state.news.data.articles.slice(7,11)" 
+          :key="article.id"
+          :title="article.title"
+          :image="article.urlToImage"
+          :date="article.publishedAt.slice(0,10)"
+          >
+          </NewsItemMedium>
         </CategoryContainer>
         <Banner />
         <CategoryContainer
@@ -44,8 +61,14 @@
           :showControls="true"
           :controlsColor="'yellowControls'"
         >
-          <NewsItemMedium />
-          <NewsItemMedium />
+          <NewsItemMedium 
+          v-for="article in this.$store.state.news.data.articles.slice(12,4)" 
+          :key="article.id"
+          :title="article.title"
+          :image="article.urlToImage"
+          :date="article.publishedAt.slice(0,10)"
+          >
+          </NewsItemMedium>
         </CategoryContainer>
         <div class="small-containers">
           <CategoryContainer
@@ -94,13 +117,8 @@ export default {
     NewsItemMedium,
     PictureSlider,
   },
-  watch: {
-    news() {
-      console.log(this.$store.state.news);
-      return this.$store.state.news;
-    },
-  },
-};
+}
+
 </script>
 <style lang="sass" scoped>
 @media only screen and (max-width: 600px)
@@ -130,7 +148,7 @@ export default {
   .content
     width: 65%
     .side
-      width: 55%
+      width: 95%
 @media only screen and (min-width: 601px)
   .small-containers
       display: flex
