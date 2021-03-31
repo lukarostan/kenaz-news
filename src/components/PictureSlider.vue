@@ -9,20 +9,24 @@
                 @mousedown="pictureSliderRightHandler">
             </div>
             <div class="pictures-bar">
-                <img src="../assets/pictures-bar (1).png" alt="">
-                <img src="../assets/pictures-bar (2).png" alt="">
-                <img src="../assets/pictures-bar (3).png" alt="">
-                <img src="../assets/pictures-bar (4).png" alt="">
-                <img src="../assets/pictures-bar (5).png" alt="">
-                <img src="../assets/pictures-bar (6).png" alt="">
-                <img src="../assets/pictures-bar (7).png" alt="">
+                <img src="../assets/pictures-bar (1).png" @mousedown="pictureSliderPosition = 0" alt="">
+                <img src="../assets/pictures-bar (2).png" @mousedown="pictureSliderPosition = -1" alt="">
+                <img src="../assets/pictures-bar (3).png" @mousedown="pictureSliderPosition = -2" alt="">
+                <img src="../assets/pictures-bar (4).png" @mousedown="pictureSliderPosition = -3" alt="">
+                <img src="../assets/pictures-bar (5).png" @mousedown="pictureSliderPosition = -4" alt="">
+                <img src="../assets/pictures-bar (6).png" @mousedown="pictureSliderPosition = -5" alt="">
+                <img src="../assets/pictures-bar (7).png" @mousedown="pictureSliderPosition = -6" alt="">
             </div>
         </div>
         <div class="slider" id="slider">
-            <img :style="{transform: 'translateX('+ this.pictureSliderPosition * 100 +'%)'}" src="../assets/picture-slider.png" alt="" class="slider-image">
-            <img :style="{transform: 'translateX('+ this.pictureSliderPosition * 100 +'%)'}" src="../assets/picture-slider.png" alt="" class="slider-image">
-            <img :style="{transform: 'translateX('+ this.pictureSliderPosition * 100 +'%)'}" src="../assets/picture-slider.png" alt="" class="slider-image">
-            <img :style="{transform: 'translateX('+ this.pictureSliderPosition * 100 +'%)'}" src="../assets/picture-slider.png" alt="" class="slider-image">
+            <img :style="{transform: 'translateX('+ this.pictureSliderPosition * 100 +'%)'}" src="../assets/picslider1.jpg" alt="" class="slider-image">
+            <img :style="{transform: 'translateX('+ this.pictureSliderPosition * 100 +'%)'}" src="../assets/picslider2.jpg" alt="" class="slider-image">
+            <img :style="{transform: 'translateX('+ this.pictureSliderPosition * 100 +'%)'}" src="../assets/picslider3.jpg" alt="" class="slider-image">
+            <img :style="{transform: 'translateX('+ this.pictureSliderPosition * 100 +'%)'}" src="../assets/picslider4.jpg" alt="" class="slider-image">
+            <img :style="{transform: 'translateX('+ this.pictureSliderPosition * 100 +'%)'}" src="../assets/picslider5.jpg" alt="" class="slider-image">
+            <img :style="{transform: 'translateX('+ this.pictureSliderPosition * 100 +'%)'}" src="../assets/picslider6.jpg" alt="" class="slider-image">
+            <img :style="{transform: 'translateX('+ this.pictureSliderPosition * 100 +'%)'}" src="../assets/picslider7.jpg" alt="" class="slider-image">
+
 
         </div>
     </div>
@@ -38,15 +42,15 @@ export default {
         pictureSliderLeftHandler(){
             
             console.log(this.pictureSliderPosition)
-            if(this.pictureSliderPosition <=0){
+            if(this.pictureSliderPosition != 0){
                 return this.pictureSliderPosition++ 
             }
         },
         pictureSliderRightHandler(){
-            if(this.pictureSliderPosition >=0){
+            console.log(this.pictureSliderPosition)
+            if(this.pictureSliderPosition > -document.querySelectorAll(".slider-image").length +1){
                 return this.pictureSliderPosition--
             }
-            console.log(this.pictureSliderPosition)
         }
     }
 }
@@ -57,6 +61,7 @@ export default {
 .slider-container
     position: relative
     width: 100%
+    overflow: hidden
     .slider-controls
         position: absolute
         width: 100%
@@ -90,13 +95,13 @@ export default {
             img:hover
                 cursor: pointer
                 transform: translateY(-2%)
-            
     .slider
         overflow: hidden
         display: flex
         flex-direction: row
-        height: 500px
+        width: 1000%
+        max-height: 500px
         .slider-image
-            width: 1000px
+            width: 10%
             transition: all 0.5s
 </style>
