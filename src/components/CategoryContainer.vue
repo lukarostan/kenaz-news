@@ -4,12 +4,25 @@
             <h2 class="bitter">{{ categoryContainerTitle }}</h2>
             <a v-if="!showControls" href="#" class="varela">{{ $t('see-all') }}</a>
             <div v-if="showControls" class="controls">
-                <div class="arrow" :class="controlsColor" id="right"></div>
-                <div class="arrow" :class="controlsColor" id="left"></div>
+                <div 
+                class="arrow" 
+                :class="controlsColor" 
+                id="right"
+                @mousedown="carouselHandleRightClick">
+                </div>
+                <div 
+                class="arrow" 
+                :class="controlsColor" 
+                id="left"
+                @mousedown="carouselHandleLeftClick">
+                </div>
             </div>
         </div>
-        <div class="category-news-container" :class="categoryContainerDisplay">
-            <slot>
+        <div 
+        class="category-news-container" 
+        :class="categoryContainerDisplay"
+        :style="{transform: 'translateX('+ this.carouselPosition * 100 +'%)'}">
+            <slot >
             </slot>
         </div>
     </div>
@@ -25,7 +38,20 @@ export default {
         'categoryContainerDisplay',
         'categoryContainerSize',
         'showControls',
-        'controlsColor']
+        'controlsColor'],
+    data(){
+        return{
+            carouselPosition: 0
+        }
+    },
+    methods:{
+        carouselHandleLeftClick(){
+            return this.carouselPosition--
+        },
+        carouselHandleRightClick(){
+            return this.carouselPosition++ 
+        }
+    }
 }
 </script>
 <style lang="sass" scoped>
@@ -69,6 +95,7 @@ export default {
     background: white
     padding: 15px 20px
     margin: 10px 0
+    overflow: hidden
     .category-title
         width: 100%
         display: flex
@@ -89,4 +116,7 @@ export default {
                 transform: rotate(45deg)
             #left
                 transform: rotate(225deg)
+    .category-news-container
+        transition: all 0.5s
+
 </style>
