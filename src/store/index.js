@@ -6,7 +6,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    news: [],
+    news: [] 
   },
   mutations: {
   },
@@ -17,7 +17,8 @@ export default new Vuex.Store({
         .get('https://newsapi.org/v2/top-headlines?' +
         'country=us&' +
         'apiKey=3e6b5c6472f946bcb61057a205669f44')
-        this.news = response
+        this.state.news = response
+        console.log(response.data)
       }catch(err){
         console.log(err)
       }

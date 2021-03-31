@@ -62,7 +62,7 @@
           :controlsColor="'yellowControls'"
         >
           <NewsItemMedium 
-          v-for="article in this.$store.state.news.data.articles.slice(12,4)" 
+          v-for="article in this.$store.state.news.data.articles.slice(12,14)" 
           :key="article.id"
           :title="article.title"
           :image="article.urlToImage"
