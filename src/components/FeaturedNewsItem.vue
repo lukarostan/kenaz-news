@@ -7,7 +7,7 @@
                 </div>
                 <h3>Palestinians call of peace talks after clash</h3>
             </div>
-            <img class="border" src="../assets/featured-example.png" alt="">
+            <img class="item-image" src="../assets/featured-example.png" alt="">
         </div>
 </template>
 <script>
@@ -40,6 +40,8 @@ export default {
             font-size: 14px
             line-height: 18px
             margin: 5px 0
-        .border
+        .item-image
             border: 2px solid white
+            margin-left:  15px
+        
 </style>

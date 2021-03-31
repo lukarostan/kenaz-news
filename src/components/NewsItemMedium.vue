@@ -16,20 +16,23 @@ export default {
 <style lang="sass" scoped>
 @media only screen and (min-width: 601px)
     .medium
-        
+        img
+        max-width: 100%
+        max-height: 100%
 
 .medium
     transition: all 0.5s
-    padding: 15px 20px 15px 0
-    min-width: 40%
+    padding: 15px 0
+    min-width: 35%
     img
-        max-width: 60%
-        max-height: 60%
+        max-width: 90%
+        max-height: 100%
     .medium-content-date
         display: flex
         justify-content: space-between
         font-size: 12px
         width: 80%
+        margin: 0
     h3
         font-size: 18px
         width: 70%
